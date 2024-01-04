@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     ContactComponent,
     StatusComponent,
     AddContactComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

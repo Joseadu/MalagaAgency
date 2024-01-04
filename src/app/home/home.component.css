@@ -1,0 +1,28 @@
+/* Home styles */
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(../../assets/img/Background.png);
+  background-size: cover;
+  background-position: bottom center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.home-text h1 {
+  font-size: var(--h1-font);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.home-text p {
+  font-size: var(--p-font);
+  font-weight: 500;
+  line-height: 30px;
+  color: #ffffffab;
+  margin-right: 40%;
+  margin-bottom: 35px;
+}

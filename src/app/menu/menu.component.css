@@ -1,0 +1,80 @@
+
+
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: transparent;
+  padding: 27px 17%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .50s ease;
+}
+
+.header.sticky {
+  padding: 8px 17%;
+  background-color: transparent;
+  backdrop-filter: blur(36px);
+}
+
+.logo {
+  font-size: 33px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.logo__highlight {
+  color: var(--main-color);
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar__link {
+  color: var(--text-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  margin: 15px 22px;
+  transition: all .50s ease;
+}
+
+.navbar__link:hover {
+  color: var(--main-color);
+}
+
+.h-right {
+  display: flex;
+  align-items: center;
+  margin-right: -20px;
+}
+
+.h-right__link:first-child {
+  color: var(--text-color);
+  font-size: var(--p-font);
+}
+
+.h-right__link {
+  vertical-align: middle;
+  font-size: 20px;
+  color: var(--text-color);
+  margin-right: 20px;
+  transition: all .50s ease;
+}
+
+.h-right__link:not(:first-child):hover {
+  color: var(--main-color);
+  transform: translateY(-4px);
+}
+
+#menu-icon {
+  color: var(--text-color);
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}

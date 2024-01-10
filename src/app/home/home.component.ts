@@ -12,4 +12,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  name = "Angular";
+  isDisabled = false;
+
+  functionClick(name: any) {
+    alert(name);
+  }
+
 }

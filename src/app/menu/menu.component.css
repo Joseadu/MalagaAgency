@@ -23,7 +23,7 @@
 
 .logo {
   font-size: 33px;
-  color: var(--text-color);
+  color: var(--text-white);
   font-weight: 700;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .navbar__link {
-  color: var(--text-color);
+  color: var(--text-white);
   font-size: var(--p-font);
   font-weight: 500;
   margin: 15px 22px;
@@ -54,14 +54,14 @@
 }
 
 .h-right__link:first-child {
-  color: var(--text-color);
+  color: var(--text-white);
   font-size: var(--p-font);
 }
 
 .h-right__link {
   vertical-align: middle;
   font-size: 20px;
-  color: var(--text-color);
+  color: var(--text-white);
   margin-right: 20px;
   transition: all .50s ease;
 }
@@ -72,7 +72,7 @@
 }
 
 #menu-icon {
-  color: var(--text-color);
+  color: var(--text-white);
   font-size: 30px;
   cursor: pointer;
   z-index: 1001;

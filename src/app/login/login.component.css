@@ -1,11 +1,1 @@
-#login {
-  width: 100% !important;
-  height: 100vh !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.ng-star-inserted {
-  width: 100%;
-}
+@import url(../../styles.css);

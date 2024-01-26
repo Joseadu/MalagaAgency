@@ -4,7 +4,7 @@ import { MaterialModule } from 'src/material-module';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
+import { Sweetalert2Service } from 'src/app/service/sweetalert2.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service:UserService, private route:Router) { }
+  constructor(private service:UserService, private route:Router, private sweetAlert2Service:Sweetalert2Service) { }
 
   ngOnInit(): void {
     localStorage.clear();
@@ -30,19 +30,10 @@ export class LoginComponent implements OnInit {
 
         if(this.respData != null){
           localStorage.setItem('token', this.respData.jwtTokken);
-          // console.log(this.respdata)
-
           this.route.navigate(['home']);
-
         } else {
           //sweetalert2, implementar control de errores, preguntar chatgpt
-          Swal.fire({
-            position: "top-end",
-            icon: "error",
-            title: "Login failed",
-            showConfirmButton: false,
-            timer: 1500
-          });
+          this.sweetAlert2Service.showNotification('Login failed');
         }
       });
     };

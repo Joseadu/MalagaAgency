@@ -3,6 +3,7 @@ import { MaterialModule } from 'src/material-module';
 import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
+import { Sweetalert2Service } from 'src/app/service/sweetalert2.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private route:Router, private service:UserService) { }
+  constructor(private route:Router, private service:UserService, private sweetAlert2Service:Sweetalert2Service) { }
 
   respData: any;
 
@@ -36,12 +37,10 @@ export class RegisterComponent implements OnInit {
         this.respData = item;
 
         if(this.respData.result == 'pass') {
-          // sweetalert2
-          alert('User registered successfuly')
+          this.sweetAlert2Service.showNotification('User registered successfuly');
           this.route.navigate(['login']);
         } else {
-          // sweetalert2
-          alert('Failed, try again');
+          this.sweetAlert2Service.showNotification('Failed, try again');
         }
       });
     }

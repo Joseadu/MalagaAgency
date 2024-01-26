@@ -21,28 +21,28 @@ export class LoginComponent implements OnInit {
     localStorage.clear();
   }
 
-  respdata:any;
+  respData:any;
 
   ProdceedLogin(loginData:any) {
     if(loginData.valid) {
       this.service.ProceedLogin(loginData.value).subscribe(item => {
-        this.respdata = item;
+        this.respData = item;
 
-        if(this.respdata != null){
-          localStorage.setItem('token', this.respdata.jwtTokken);
+        if(this.respData != null){
+          localStorage.setItem('token', this.respData.jwtTokken);
           // console.log(this.respdata)
 
           this.route.navigate(['home']);
 
         } else {
           //sweetalert2, implementar control de errores, preguntar chatgpt
-          // Swal.fire({
-          //   position: "top-end",
-          //   icon: "success",
-          //   title: "Your work has been saved",
-          //   showConfirmButton: false,
-          //   timer: 1500
-          // });
+          Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Login failed",
+            showConfirmButton: false,
+            timer: 1500
+          });
         }
       });
     };

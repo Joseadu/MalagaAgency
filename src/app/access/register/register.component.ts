@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
           this.sweetAlert2Service.showNotification('User registered successfuly');
           this.route.navigate(['login']);
         } else {
-          this.sweetAlert2Service.showNotification('Failed, try again');
+          this.sweetAlert2Service.showErrorNotification('Failed, try again');
         }
       });
     }

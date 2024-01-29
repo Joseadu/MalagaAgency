@@ -14,7 +14,19 @@ export class Sweetalert2Service {
       showConfirmButton: false,
       timer: timer,
       customClass: {
-        popup: 'custom-popup-class',
+        popup: 'sweetalert2-success',
+      }
+    });
+  }
+
+  showErrorNotification(title: string, position: SweetAlertPosition = 'top-end', timer: number = 3500): void {
+    Swal.fire({
+      position: position,
+      title: `<p>${title}</p>`,
+      showConfirmButton: false,
+      timer: timer,
+      customClass: {
+        popup: 'sweetalert2-error',
       }
     });
   }

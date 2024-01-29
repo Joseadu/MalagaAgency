@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccessRoutingModule } from './access/access-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusComponent,
     AddContactComponent,
     MenuComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

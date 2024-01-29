@@ -4,6 +4,9 @@
   --text-black: #373737;
   --bg-color: #000;
   --main-color: #ffa343;
+  --color-alert: #FB6566;
+  --color-success: #5ADB99;
+  --color-info: #8EDBE5;
 
   --h1-font: 6rem;
   --h2-font: 3rem;
@@ -28,6 +31,14 @@
 div:where(.swal2-container) div:where(.swal2-popup) {
   padding: 16px 60px 0px 60px !important;
   width: auto !important;
+}
+
+.sweetalert2-error {
+  background-color: var(--color-alert) !important;
+}
+
+.sweetalert2-success {
+  background-color: var(--color-success) !important;
 }
 
 .mat-h2, .mat-title, .mat-typography h2 {

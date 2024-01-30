@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
   });
 
   SaveUser() {
-    console.log(this.reactiveForm.value);
+    // console.log(this.reactiveForm.value);
     if(this.reactiveForm.valid) {
       this.service.UserRegistration(this.reactiveForm.value). subscribe(item => {
         this.respData = item;

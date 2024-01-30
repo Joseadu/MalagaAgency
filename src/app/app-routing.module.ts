@@ -7,12 +7,14 @@ import { AddContactComponent } from './add-contact/add-contact.component';
 import { StatusComponent } from './status/status.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { UserComponent } from './user/user.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: "home", component: HomeComponent},
   {path: "about", component: AboutComponent},
   {path: "user", component: UserComponent, canActivate:[AuthGuard]},
+  {path: "product", component: ProductsComponent, canActivate:[AuthGuard]},
   {
     path: "contact",
     component: ContactComponent,

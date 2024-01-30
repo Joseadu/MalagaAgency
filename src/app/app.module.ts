@@ -12,9 +12,11 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccessRoutingModule } from './access/access-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { MaterialModule } from 'src/material-module';
+import { TokenInterceptorService } from './service/token-interceptor.service';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { MaterialModule } from 'src/material-module';
     AddContactComponent,
     MenuComponent,
     UserComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { MaterialModule } from 'src/material-module';
     HttpClientModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,3 +4,11 @@
     align-items: center;
     margin-top: 80px;
 }
+
+.mat-row:nth-child(even) {
+    background-color: #f8f8f8; /* Color de fondo para filas pares */
+  }
+  
+  .mat-row:nth-child(odd) {
+    background-color: #ffffff; /* Color de fondo para filas impares */
+  }

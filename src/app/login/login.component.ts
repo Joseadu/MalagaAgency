@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     if(loginData.valid) {
       this.service.ProceedLogin(loginData.value).subscribe(item => {
         this.respData = item;
+        console.log(this.respData);
 
         if(this.respData != null){
           localStorage.setItem('token', this.respData.jwtTokken);

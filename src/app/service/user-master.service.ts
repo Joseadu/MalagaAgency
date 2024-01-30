@@ -1,28 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserModel } from '../model/UserModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserMasterService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
+  apiurl = 'https://localhost:44321/api/UserMaster';
 
-  apiUrl = "https://localhost:44321/api/UserMaster";
-
-  GetAllUser () {
-    return this.http.get(this.apiUrl);
+  GetAllUser(): Observable<UserModel[]> {
+    return this.http.get<UserModel[]>(this.apiurl);
   }
 
-  GetUserById (userId: any) {
-    return this.http.get(this.apiUrl + '/' + userId);
+  GetUserbyId(UserId: any) {
+    return this.http.get(this.apiurl + '/' + UserId);
   }
 
-  RemoveUser (userId: any) {
-    return this.http.delete(this.apiUrl + '/' + userId);
+  RemoveUser(UserId: any) {
+    return this.http.delete(this.apiurl + '/' + UserId);
   }
 
-  UpdateUser (inputData: any) {
-    return this.http.post(this.apiUrl + '/ActivateUser', inputData);
+
+  UpdateUser(inputdata: any) {
+    return this.http.post(this.apiurl + '/ActivateUser', inputdata);
   }
+
+
 }

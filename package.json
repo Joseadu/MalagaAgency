@@ -20,7 +20,6 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
-    "datatables.net-dt": "^1.13.8",
     "jquery": "^3.7.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.10.2",

@@ -91,6 +91,16 @@ section {
     padding: 70px 17% 60px;
 }
 
+.section {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.user-table {
+  width: 800px;
+}
+
 .btn-r {
   margin-left: 4px;
 }

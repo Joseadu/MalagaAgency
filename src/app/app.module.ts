@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccessRoutingModule } from './access/access-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
+import { MaterialModule } from 'src/material-module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserComponent } from './user/user.component';
     FormsModule,
     BrowserAnimationsModule,
     AccessRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -60,11 +60,6 @@ body {
 
 /* ANGULAR MATERIAL START */
 
-
-.ng-star-inserted {
-  width: 100%;
-}
-
 mat-card-title {
   margin-bottom: 20px;
 }

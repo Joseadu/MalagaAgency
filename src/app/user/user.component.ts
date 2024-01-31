@@ -49,7 +49,7 @@ export class UserComponent implements OnInit {
     });
   }
 
-  displayedColumns: string[] = ['userid', 'name', 'email', 'isActive', 'role'];
+  displayedColumns: string[] = ['userid', 'name', 'email', 'isActive', 'role', 'action'];
   // dataSource = ELEMENT_DATA;
 
 }

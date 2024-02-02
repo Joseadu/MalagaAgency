@@ -5,8 +5,8 @@
       <li><a href="#" class="navbar__link" routerLink="/home">Home</a></li>
       <li><a href="#" class="navbar__link" routerLink="/about">About</a></li>
       <li><a href="#" class="navbar__link" routerLink="/contact">Contact</a></li>
-      <li><a href="#" class="navbar__link" routerLink="/user">Users</a></li>
-      <li><a href="#" class="navbar__link" routerLink="/product">Products</a></li>
+      <li><a href="#" *ngIf="isAdmin" class="navbar__link" routerLink="/user">Users</a></li>
+      <li><a href="#" *ngIf="isAdmin" class="navbar__link" routerLink="/product">Products</a></li>
   </ul>
 
   <div class="h-right">

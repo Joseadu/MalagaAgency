@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Sweetalert2Service } from 'src/app/service/sweetalert2.service';
 import { UserMasterService } from 'src/app/service/user-master.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UserMasterService } from 'src/app/service/user-master.service';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor(private service:UserMasterService, @Inject(MAT_DIALOG_DATA) public data:any) { }
+  constructor(private service:UserMasterService, @Inject(MAT_DIALOG_DATA) public data:any, private SweetAlert2: Sweetalert2Service, private ref:MatDialogRef<EditUserComponent>) { }
 
   ngOnInit(): void {
     this.GetAllRoles();
@@ -19,9 +20,10 @@ export class EditUserComponent implements OnInit {
 
   roleData: any;
   editData: any;
+  saveData: any;
 
   updateUserForm = new FormGroup({
-    userid: new FormControl(""),
+    userid: new FormControl({value:"", disabled: true}),
     role: new FormControl("", Validators.required),
     isActive: new FormControl("", Validators.required)
   });
@@ -29,7 +31,6 @@ export class EditUserComponent implements OnInit {
   GetAllRoles() {
     this.service.GetAllRoles().subscribe(item => {
       this.roleData = item;
-      console.log(this.roleData);
     })
   }
 
@@ -48,7 +49,17 @@ export class EditUserComponent implements OnInit {
     });
   }
 
-  updateUser() {
-
+  SaveUser() {
+    if(this.updateUserForm.valid){
+      this.service.UpdateUser(this.updateUserForm.getRawValue()).subscribe(item => {
+        this.saveData = item;
+        if(this.saveData.result == 'pass') {
+          this.SweetAlert2.showNotification('User edited successfully');
+          this.ref.close();
+        } else {
+          this.SweetAlert2.showErrorNotification('There was an error');
+        }
+      });
+    }
   }
 }

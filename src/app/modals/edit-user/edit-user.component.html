@@ -1,6 +1,6 @@
 <mat-card-title>User details</mat-card-title>
 
-<form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+<form [formGroup]="updateUserForm" (ngSubmit)="SaveUser()">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>User ID</mat-label>
         <input matInput formControlName="userid">

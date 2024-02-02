@@ -41,18 +41,21 @@ export class UserComponent implements OnInit {
     this.service.GetAllUser().subscribe(item => {
       this.UserDetail = item;
 
-      // console.log(this.UserDetail);
       this.dataSource = new MatTableDataSource<UserModel>(this.UserDetail);
       this.dataSource.paginator = this.paginator;
     });
   }
 
   functionEdit(userId: any) {
-    this.dialog.open(EditUserComponent, {
+    let popup = this.dialog.open(EditUserComponent, {
       width: '400px',
       data: {
         userId: userId
       }
+    });
+
+    popup.afterClosed().subscribe(item => {
+      this.GetAllUser();
     });
   }
 

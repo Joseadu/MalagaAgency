@@ -9,23 +9,28 @@ import { UserModel } from '../model/UserModel';
 export class UserMasterService {
 
   constructor(private http: HttpClient) { }
-  apiurl = 'https://localhost:44321/api/UserMaster';
+  apiUrlUserMaster = 'https://localhost:44321/api/UserMaster';
+  apiUrlGetAllRole = 'https://localhost:44321/User/GetAllRole';
 
   GetAllUser(): Observable<UserModel[]> {
-    return this.http.get<UserModel[]>(this.apiurl);
+    return this.http.get<UserModel[]>(this.apiUrlUserMaster);
   }
 
-  GetUserbyId(UserId: any) {
-    return this.http.get(this.apiurl + '/' + UserId);
+  GetAllRoles() {
+    return this.http.get(this.apiUrlGetAllRole);
+  }
+
+  GetUserById(UserId: any) {
+    return this.http.get(this.apiUrlUserMaster + '/' + UserId);
   }
 
   RemoveUser(UserId: any) {
-    return this.http.delete(this.apiurl + '/' + UserId);
+    return this.http.delete(this.apiUrlUserMaster + '/' + UserId);
   }
 
 
   UpdateUser(inputdata: any) {
-    return this.http.post(this.apiurl + '/ActivateUser', inputdata);
+    return this.http.post(this.apiUrlUserMaster + '/ActivateUser', inputdata);
   }
 
 

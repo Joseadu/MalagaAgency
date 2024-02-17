@@ -14,8 +14,9 @@
       <a href="#" class="h-right__link"><i class="ri-instagram-fill fa-users-class"></i></a>
       <a href="#" class="h-right__link"><i class="ri-twitter-fill fa-users-class"></i></a>
       <a href="#" class="h-right__link"><i class="ri-facebook-fill fa-users-class"></i></a>
-      <!-- <li><a href="#" class="navbar__link" routerLink="/login">Login</a></li> -->
-      <li><a href="#" class="navbar__link" routerLink="/login">Logout</a></li>
+      
+      <li><a href="#" class="navbar__link" (click)="Logout()" *ngIf="tokenExist">Logout</a></li>
+      <li><a href="#" class="navbar__link" routerLink="/login" *ngIf="!tokenExist">Login</a></li>
       <div id="menu-icon" class="bx bx-menu"></div>
   </div>
 </header>

@@ -10,9 +10,16 @@ export class UserService {
   constructor(private http:HttpClient) {
 
   }
-
   ProceedLogin(inputData:any) {
     return this.http.post('https://localhost:44321/User/Authenticate', inputData);
+  }
+
+  TokenExist() {
+    if(localStorage.getItem('token') == null) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   IsLoggedIn() {
